@@ -1,13 +1,19 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Random Number Generator",
   "version": "1.0",
-  "description": "Generates a random number from 1-99 every few seconds.",
+  "description": "Generates 99 random numbers and displays them one at a time.",
   "background": {
-    "service_worker": "popup.js"
+    "scripts": ["background.js"],
+    "persistent": false
   },
-  "action": {
-    "default_popup": "popup.html"
+  "permissions": [
+    "storage"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html" 
   },
-  "permissions": ["storage", "notifications"]
+  "web_accessible_resources": [
+    "display.html"
+  ]
 }
